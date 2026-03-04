@@ -85,6 +85,8 @@ Rails.application.configure do
   config.hosts << "clawdeck.onrender.com"
   config.hosts << "app.clawdeck.io"
   config.hosts << ".clawdeck.io"  # Allow all subdomains
+  config.hosts << ".kokoit.com"  # Allow all subdomains
+  config.hosts << "clawdeck.kokoit.com"  # Allow all subdomains
   
   # Skip DNS rebinding protection for the default health check endpoint.
   config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
