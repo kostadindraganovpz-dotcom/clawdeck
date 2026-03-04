@@ -1,6 +1,5 @@
 services:
   app:
-    image: ghcr.io/clawdeckio/clawdeck:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,12 +12,10 @@ services:
       SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       RAILS_SERVE_STATIC_FILES: "true"
       RAILS_LOG_TO_STDOUT: "true"
-      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
-      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET}
+      GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+      GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
     ports:
       - "3000:3000"
-    command: >
-      bash -c "bin/rails db:prepare && bin/rails server -b 0.0.0.0 -p 3000"
     restart: unless-stopped
 
   db:
