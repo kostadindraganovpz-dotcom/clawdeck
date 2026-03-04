@@ -76,7 +76,7 @@ Rails.application.configure do
     "www.clawdeck.io",       # WWW subdomain
     "104.236.193.0",      # Server IP for direct access
     IPAddr.new("127.0.0.1"),  # Localhost
-    IPAddr.new("::1")         # IPv6 localhost,
+    IPAddr.new("::1"),        # IPv6 localhost,
     "clawdeck.kokoit.com",
     "www.clawdeck.kokoit.com"
   ]
